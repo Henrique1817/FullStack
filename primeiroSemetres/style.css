@@ -1,0 +1,67 @@
+:root {
+  /* Cores Principais */
+  --primary-color: #231e33;
+  --secondary-color: #afc9eb;
+  --accent-color: #88d4f1;
+
+  /* Neutros (Fundo e Texto) */
+  --bg-color: #f4f4f4;
+  --text-color: #333333;
+  --white: #ffffff;
+
+  /* Tipografia */
+  --font-main: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+
+  /* Espaçamento (Padding/Margin) */
+  --spacing-xs: 4px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+
+  /* Bordas e Sombras */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Transições */
+  --transition-fast: 0.2s ease-in-out;
+}
+
+.container {
+  margin: 0;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: var(--spacing-md);
+  font-family: var(--font-main);
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+h1 {
+  color: var(--white);
+  font-size: var(--font-size-lg);
+}
+
+nav {
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+.olimagem {
+    align-items: center;
+}
