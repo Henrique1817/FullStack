@@ -1,1 +1,179 @@
+/* Tag selector */
+:root {
+  /* Cores Principais */
+  --primary-color: #231e33;
+  --secondary-color: #afc9eb;
+  --accent-color: #88d4f1;
+  /* Neutros (Fundo e Texto) */
+  --bg-color: #f4f4f4;
+  --text-color: #333333;
+  --white: #ffffff;
+  /* Tipografia */
+  --font-main: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  /* Espaçamento (Padding/Margin) */
+  --spacing-xs: 4px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  /* Bordas e Sombras */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Transições */
+  --transition-fast: 0.2s ease-in-out;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #0f172a 0%, #071024 100%);
+  color: #e6eef8;
+}
 
+header {
+  padding: var(--spacing-md);
+  font-family: var(--font-main);
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  color: var(--white);
+  font-size: var(--font-size-lg);
+}
+
+/* Class selector */
+.container {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 1.6rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+}
+
+.containerList {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 1.6rem;
+  /* background: rgba(255,255,255,0.03); */
+  border-radius: 12px;  
+  box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+}
+
+.lead {
+  color: #cfe7ff;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #0ea5b4;
+  color: #04202b;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ID selector */
+#main-nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+nav {
+  gap: 20px;
+  align-items: center;
+}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+nav a:hover {
+      color: var(--secondary-color);
+    }
+
+.nav-link {
+  color: #cfe7ff;
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Pseudo-class */
+.nav-link:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+#projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#projects-table th,
+#projects-table td {
+  text-align: left;
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+#projects-table thead th {
+  background: rgba(255,255,255,0.02);
+  color: #eaf6ff;
+}
+
+/* Hover on table rows */
+#projects-table tbody tr:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Small responsive tweaks */
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  h1 { font-size: 1.5rem; }
+  #main-nav { gap: 0.5rem; }
+}
+
+p {
+  color: var(--white);
+}
+
+/* Remove as bolinhas da lista e adiciona espaçamento */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Estiliza os links */
+a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #ff0000; /* Cor vermelha do YouTube */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  transition: 0.3s; /* Suaviza a mudança de cor */
+}
+
+/* Efeito ao passar o mouse */
+a:hover {
+  color: #b30000; /* Vermelho mais escuro */
+  text-decoration: underline;
+}
