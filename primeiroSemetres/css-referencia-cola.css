@@ -443,7 +443,265 @@ h1, h2, .destaque { }
 
 
 /* =============================================================================
-   14. RESET / NORMALIZE (opcional - zerar estilos do navegador)
+   14. CSS GRID (layout em grade - alternativa/complemento ao Flexbox)
+   ============================================================================= */
+
+/*
+   No container: display: grid. Define colunas e linhas, depois posiciona itens.
+*/
+.grid-container {
+  display: grid;
+
+  /* Define colunas: px, fr (fração), repeat(n, 1fr) = n colunas iguais */
+  grid-template-columns: 1fr 1fr 1fr;        /* 3 colunas iguais */
+  grid-template-columns: repeat(3, 1fr);     /* mesmo efeito */
+  grid-template-columns: 200px 1fr 2fr;      /* fixo | flex | flex o dobro */
+
+  /* Define linhas */
+  grid-template-rows: auto 100px;
+
+  /* Atalho: rows / columns */
+  grid-template: 100px 1fr / 1fr 1fr 1fr;
+
+  /* Gap entre células */
+  gap: 1rem;
+  row-gap: 10px;
+  column-gap: 20px;
+
+  /* Alinhamento (como flex): justify-items, align-items, justify-content, align-content */
+  justify-items: center;
+  align-items: center;
+}
+
+/* Nos itens do grid: posicionar em qual célula */
+.grid-item {
+  grid-column: 1 / 3;    /* da linha 1 à 3 (ocupa 2 colunas) */
+  grid-row: 1 / 2;
+  /* ou atalho: grid-area: row-start / col-start / row-end / col-end */
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+
+/* =============================================================================
+   15. ESPECIFICIDADE (qual regra ganha quando há conflito)
+   ============================================================================= */
+
+/*
+   Ordem de força (do mais fraco ao mais forte):
+   1. Seletor de elemento (p, div) ...................... 0,0,0,1
+   2. Classe, atributo, pseudo-classe (.classe, :hover) .. 0,0,1,0
+   3. ID (#id) ......................................... 0,1,0,0
+   4. Inline (style="") ................................ mais forte
+   5. !important ....................................... sobrescreve tudo (evite abusar)
+*/
+.exemplo-especificidade {
+  color: blue;
+}
+#id-sobrescreve { color: red; }
+.exemplo-especificidade { color: green !important; }  /* este ganha */
+
+
+/* =============================================================================
+   16. HERANÇA (inheritance)
+   ============================================================================= */
+
+/*
+   Algumas propriedades são herdadas pelos filhos: color, font-family, font-size,
+   line-height, text-align, visibility, etc.
+   Outras NÃO: margin, padding, border, background, width, height, display, etc.
+   Forçar herança: valor inherit
+*/
+.filho-herda {
+  color: inherit;           /* usa a cor do pai */
+  font-size: inherit;
+  border: inherit;          /* pai pode não ter border, mas o filho "herda" o valor */
+}
+
+
+/* =============================================================================
+   17. BACKGROUND E GRADIENTES
+   ============================================================================= */
+
+.background-exemplos {
+  background-color: #fff;
+  background-image: url("imagem.jpg");
+  background-repeat: repeat;    /* repeat | repeat-x | repeat-y | no-repeat */
+  background-position: center; /* center | top left | 50% 50% */
+  background-size: cover;       /* cover | contain | 100px 200px | auto */
+  /* Atalho: color image repeat position/size */
+  background: #fff url("img.jpg") no-repeat center/cover;
+
+  /* Gradiente linear: direção, cores (com paradas opcionais) */
+  background: linear-gradient(to right, red, blue);
+  background: linear-gradient(90deg, red 0%, yellow 50%, blue 100%);
+  background: linear-gradient(180deg, #fff, #000);
+
+  /* Gradiente radial */
+  background: radial-gradient(circle, red, blue);
+  background: radial-gradient(circle at center, yellow, orange);
+}
+
+
+/* =============================================================================
+   18. FILTER (efeitos visuais em imagem/elemento)
+   ============================================================================= */
+
+.filter-exemplos {
+  filter: blur(5px);           /* desfoco */
+  filter: brightness(1.2);     /* 1 = normal, >1 mais claro */
+  filter: contrast(1.5);
+  filter: grayscale(1);       /* 0 a 1, preto e branco */
+  filter: opacity(0.8);
+  filter: sepia(0.5);
+  filter: drop-shadow(2px 2px 4px black);  /* sombra (diferente de box-shadow) */
+  /* Combinar */
+  filter: brightness(1.1) contrast(1.2);
+}
+
+
+/* =============================================================================
+   19. FLOAT E CLEAR (layout antigo, ainda aparece em provas)
+   ============================================================================= */
+
+/*
+   float: left | right - tira elemento do fluxo, outros conteúdos "contornam".
+   clear: left | right | both - elemento não fica ao lado do float (quebra a linha).
+*/
+.float-left { float: left; }
+.float-right { float: right; }
+.clear-both { clear: both; }   /* usado depois de floats para "limpar" */
+
+
+/* =============================================================================
+   20. VISIBILITY vs DISPLAY
+   ============================================================================= */
+
+/*
+   display: none  - remove do fluxo, não ocupa espaço, não é acessível.
+   visibility: hidden - ocupa espaço, fica invisível (deixa "buraco").
+   visibility: visible - padrão, mostra o elemento.
+*/
+
+
+/* =============================================================================
+   21. MIN / MAX WIDTH E HEIGHT (responsividade)
+   ============================================================================= */
+
+.min-max {
+  min-width: 300px;    /* não fica menor que isso */
+  max-width: 1200px;   /* não fica maior que isso */
+  min-height: 100px;
+  max-height: 80vh;
+  width: 100%;         /* combinado com max-width é muito usado */
+}
+
+
+/* =============================================================================
+   22. CALC() - cálculos no CSS
+   ============================================================================= */
+
+.calc-exemplo {
+  width: calc(100% - 40px);      /* largura total menos padding */
+  height: calc(100vh - 80px);
+  margin: calc(1rem + 5px);
+  /* Use + - * / com espaços ao redor dos operadores */
+}
+
+
+/* =============================================================================
+   23. OUTLINE (contorno fora da borda, não afeta layout)
+   ============================================================================= */
+
+.outline-exemplo {
+  outline: 2px solid blue;   /* aparece em :focus em inputs (acessibilidade) */
+  outline-offset: 4px;       /* distância da borda */
+  outline: none;             /* remover outline (se fizer, use outro indicador de foco!) */
+}
+
+
+/* =============================================================================
+   24. PSEUDO-CLASSES DE FORMULÁRIO E OUTRAS
+   ============================================================================= */
+
+input:focus { outline: 2px solid blue; }
+input:disabled { opacity: 0.6; cursor: not-allowed; }
+input:required { border-color: red; }
+input:optional { }
+input:valid { border-color: green; }
+input:invalid { border-color: red; }
+input:checked { accent-color: blue; }   /* checkbox/radio marcado */
+:placeholder-shown { color: #999; }      /* quando placeholder está visível */
+:read-only { background: #eee; }
+:target { }   /* elemento com id igual ao # da URL */
+
+
+/* =============================================================================
+   25. VERTICAL-ALIGN (inline e inline-block)
+   ============================================================================= */
+
+/*
+   Alinha elemento na linha (texto, img, inline-block). Valores: baseline | top | middle | bottom | sub | super
+*/
+.vertical-align-exemplo {
+  vertical-align: middle;   /* muito usado em ícone + texto */
+}
+
+
+/* =============================================================================
+   26. LIST-STYLE (listas ul / ol)
+   ============================================================================= */
+
+ul, ol {
+  list-style-type: disc;     /* disc | circle | square | none | decimal */
+  list-style-position: inside; /* inside | outside */
+  list-style-image: url("bullet.png");
+  /* Atalho: type position image */
+  list-style: none;          /* tirar marcadores (comum em menus) */
+}
+
+
+/* =============================================================================
+   27. @IMPORT E @FONT-FACE
+   ============================================================================= */
+
+/* Importar outro arquivo CSS (no início do arquivo) */
+/* @import url("outro.css"); */
+
+/* Definir fonte customizada */
+/*
+@font-face {
+  font-family: "MinhaFonte";
+  src: url("minhafonte.woff2") format("woff2"),
+       url("minhafonte.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body { font-family: "MinhaFonte", sans-serif; }
+*/
+
+
+/* =============================================================================
+   28. ASPECT-RATIO (proporção fixa, útil para vídeo/cards)
+   ============================================================================= */
+
+.aspect-ratio-exemplo {
+  aspect-ratio: 16 / 9;   /* largura:altura - mantém proporção */
+  width: 100%;
+  /* height é calculada automaticamente */
+}
+
+
+/* =============================================================================
+   29. USER-SELECT E OUTROS (UX)
+   ============================================================================= */
+
+.user-select-none { user-select: none; }   /* texto não selecionável */
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+
+/* =============================================================================
+   30. RESET / NORMALIZE (opcional - zerar estilos do navegador)
    ============================================================================= */
 
 * {
