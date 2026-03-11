@@ -1,0 +1,458 @@
+/*
+================================================================================
+  COLINHA CSS - PRINCIPAIS CONCEITOS PARA PROVA E DESENVOLVIMENTO
+  Use este arquivo como referência rápida. Os exemplos estão comentados.
+================================================================================
+*/
+
+
+/* =============================================================================
+   1. UNIDADES DE MEDIDA
+   ============================================================================= */
+
+/* 
+   PX (pixels) - Valor fixo, não escala com o usuário.
+   Use para: bordas finas, sombras, coisas que devem manter tamanho exato.
+*/
+.exemplo-px { font-size: 16px; width: 200px; }
+
+/*
+   REM (root em) - Relativo ao font-size do elemento <html> (geralmente 16px).
+   1rem = 16px (se root for 16px). Ótimo para acessibilidade e responsividade.
+*/
+.exemplo-rem { font-size: 1rem; padding: 1.5rem; margin: 2rem; }
+
+/*
+   EM - Relativo ao font-size do elemento PAI (ou do próprio elemento em font-size).
+   Se o pai tem 20px, 1em = 20px. Pode "acumular" em elementos aninhados.
+*/
+.exemplo-em { font-size: 1em; padding: 0.5em; }
+
+/*
+   % (porcentagem) - Relativo ao elemento PAI (width, height) ou ao viewport em alguns casos.
+   width: 50% = metade da largura do pai.
+*/
+.exemplo-porcentagem { width: 100%; max-width: 80%; height: 50%; }
+
+/*
+   VW / VH - Viewport width e viewport height.
+   100vw = 100% da largura da tela, 100vh = 100% da altura da tela.
+*/
+.exemplo-viewport { width: 50vw; height: 100vh; }
+
+
+/* =============================================================================
+   2. CORES
+   ============================================================================= */
+
+/* Nome da cor (palavra-chave) */
+.cor-nome { color: red; background-color: blue; }
+
+/* Hexadecimal - #RRGGBB (vermelho, verde, azul). #ffffff = branco, #000000 = preto */
+.cor-hex { color: #ff0000; background: #00ff00; }
+
+/* Hex com transparência - #RRGGBBAA (últimos 2 dígitos = alpha 00 a ff) */
+.cor-hex-alpha { background: #00000080; }
+
+/* RGB - rgb(vermelho, verde, azul) - valores de 0 a 255 */
+.cor-rgb { color: rgb(255, 0, 0); }
+
+/* RGBA - rgb + alpha (transparência de 0 a 1) */
+.cor-rgba { background: rgba(0, 0, 0, 0.5); }
+
+/* HSL - hsl(matiz 0-360, saturação %, luminosidade %) */
+.cor-hsl { color: hsl(120, 100%, 50%); }
+
+/* HSLA - hsl + alpha */
+.cor-hsla { background: hsla(0, 0%, 100%, 0.8); }
+
+
+/* =============================================================================
+   3. BOX MODEL (margin, padding, border, box-sizing)
+   ============================================================================= */
+
+/*
+   margin - Espaço FORA do elemento (entre elementos).
+   padding - Espaço DENTRO do elemento (entre borda e conteúdo).
+   border - Borda ao redor do elemento.
+*/
+.box-model {
+  margin: 10px;           /* todos os lados */
+  margin: 10px 20px;     /* vertical | horizontal */
+  margin: 10px 20px 30px 40px; /* topo | direita | baixo | esquerda (sentido horário) */
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 8px;    /* cantos arredondados */
+}
+
+/*
+   box-sizing: content-box (padrão) - width/height só do conteúdo; padding e border somam.
+   box-sizing: border-box - width/height INCLUEM padding e border (mais fácil de calcular).
+*/
+.box-border-box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px; /* não estoura o 100% */
+}
+
+
+/* =============================================================================
+   4. DISPLAY
+   ============================================================================= */
+
+/* block - Ocupa toda a largura, quebra linha antes e depois */
+.display-block { display: block; }
+
+/* inline - Só ocupa o espaço do conteúdo, não aceita width/height */
+.display-inline { display: inline; }
+
+/* inline-block - Como inline mas aceita width, height, margin/padding verticais */
+.display-inline-block { display: inline-block; }
+
+/* none - Esconde o elemento (não ocupa espaço) */
+.display-none { display: none; }
+
+/* flex - Ativa FLEXBOX no container */
+.display-flex { display: flex; }
+
+/* grid - Ativa CSS Grid no container */
+.display-grid { display: grid; }
+
+
+/* =============================================================================
+   5. FLEXBOX (container = display: flex)
+   ============================================================================= */
+
+.flex-container {
+  display: flex;
+
+  /* Direção dos itens: row (padrão), row-reverse, column, column-reverse */
+  flex-direction: row;
+
+  /* Quebra de linha: nowrap (padrão), wrap, wrap-reverse */
+  flex-wrap: wrap;
+
+  /* Atalho: flex-direction + flex-wrap */
+  flex-flow: row wrap;
+
+  /* Alinhamento no eixo principal (horizontal se row): start, end, center, space-between, space-around, space-evenly */
+  justify-content: center;
+
+  /* Alinhamento no eixo transversal (vertical se row): start, end, center, stretch, baseline */
+  align-items: center;
+
+  /* Alinhamento de MÚLTIPLAS linhas (quando tem wrap): flex-start, flex-end, center, space-between, space-around, stretch */
+  align-content: center;
+
+  /* Gap entre itens (espaço entre flex items) */
+  gap: 1rem;
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+/* Propriedades nos ITENS dentro do flex container */
+.flex-item {
+  /* Crescer para preencher espaço (0 = não, 1 = sim). Padrão 0 */
+  flex-grow: 1;
+
+  /* Encolher se necessário (0 = não encolhe). Padrão 1 */
+  flex-shrink: 1;
+
+  /* Tamanho base antes de grow/shrink. Padrão auto */
+  flex-basis: 200px;
+
+  /* Atalho: flex-grow flex-shrink flex-basis. Ex: flex: 1 1 auto; */
+  flex: 1 1 auto;
+
+  /* Ordem (número). Menor vem primeiro. Padrão 0 */
+  order: 1;
+
+  /* Alinhamento individual do item (sobrescreve align-items do container) */
+  align-self: flex-start; /* auto | flex-start | flex-end | center | stretch | baseline */
+}
+
+
+/* =============================================================================
+   6. POSITION
+   ============================================================================= */
+
+/* static - Padrão. Fluxo normal do documento */
+.position-static { position: static; }
+
+/* relative - Mantém espaço no fluxo, pode deslocar com top/right/bottom/left */
+.position-relative { position: relative; top: 10px; left: 20px; }
+
+/* absolute - Sai do fluxo, posiciona em relação ao ancestral position != static */
+.position-absolute { position: absolute; top: 0; right: 0; }
+
+/* fixed - Posiciona em relação à viewport (fica fixo na tela ao rolar) */
+.position-fixed { position: fixed; bottom: 20px; right: 20px; }
+
+/* sticky - Híbrido: normal até atingir um limite (top, etc.), depois fica "fixo" */
+.position-sticky { position: sticky; top: 0; }
+
+
+/* =============================================================================
+   7. RESPONSIVIDADE - MEDIA QUERIES
+   ============================================================================= */
+
+/* Sintaxe: @media (condição) { ... } */
+
+/* Por largura mínima (mobile first - estilos base para mobile, depois aumenta) */
+@media (min-width: 768px) {
+  .responsivo-tablet { font-size: 1.2rem; }
+}
+
+@media (min-width: 1024px) {
+  .responsivo-desktop { max-width: 1200px; margin: 0 auto; }
+}
+
+/* Por largura máxima */
+@media (max-width: 767px) {
+  .só-mobile { display: block; }
+}
+
+/* Intervalo (entre 768px e 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .só-tablet { width: 90%; }
+}
+
+/* Por orientação */
+@media (orientation: landscape) {
+  .paisagem { flex-direction: row; }
+}
+
+@media (orientation: portrait) {
+  .retrato { flex-direction: column; }
+}
+
+
+/* =============================================================================
+   8. KEYFRAMES E ANIMAÇÕES
+   ============================================================================= */
+
+/*
+   @keyframes NOME_ANIMACAO { ... }
+   Define os "quadros" da animação em % do tempo (0% = início, 100% = fim).
+   from = 0%, to = 100%.
+*/
+
+@keyframes pulsar {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes deslizar {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/*
+   Como usar: na classe do elemento, use a propriedade animation.
+   animation: name duration timing-function delay iteration-count direction fill-mode;
+*/
+.usar-keyframe {
+  animation-name: pulsar;
+  animation-duration: 2s;
+  animation-timing-function: ease;        /* ease | ease-in | ease-out | ease-in-out | linear */
+  animation-delay: 1s;
+  animation-iteration-count: infinite;   /* número ou infinite */
+  animation-direction: normal;           /* normal | reverse | alternate | alternate-reverse */
+  animation-fill-mode: forwards;         /* none | forwards | backwards | both */
+
+  /* Atalho (ordem comum): name duration timing delay iteration direction */
+  animation: pulsar 2s ease 1s infinite normal;
+}
+
+/* Exemplo: botão que gira ao carregar */
+.botao-animado {
+  animation: girar 1s linear infinite;
+}
+
+/* Pausar animação */
+.pausado {
+  animation-play-state: paused;
+}
+
+
+/* =============================================================================
+   9. TRANSITIONS (transição suave entre estados)
+   ============================================================================= */
+
+.transicao {
+  transition-property: all;        /* quais propriedades animar (ou listar: color, width) */
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+
+  /* Atalho: property duration timing-function delay */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Uso típico: hover muda cor com transição */
+.botao {
+  background: blue;
+  transition: background 0.3s ease;
+}
+.botao:hover {
+  background: darkblue;
+}
+
+
+/* =============================================================================
+   10. TRANSFORM (escala, rotação, posição)
+   ============================================================================= */
+
+.transform-exemplos {
+  transform: translateX(50px);      /* move horizontal */
+  transform: translateY(-20px);    /* move vertical */
+  transform: translate(10px, 20px); /* x, y */
+  transform: scale(1.5);           /* aumenta 1.5x (scaleX, scaleY também) */
+  transform: rotate(45deg);        /* gira em graus */
+  transform: skew(10deg, 5deg);   /* inclina */
+
+  /* Combinar (escrever na mesma declaração) */
+  transform: translate(10px, 10px) scale(1.2) rotate(5deg);
+}
+
+
+/* =============================================================================
+   11. SELETORES IMPORTANTES
+   ============================================================================= */
+
+/* Classe - .nome */
+.classe { }
+
+/* ID - #nome (use com moderação, preferir classe) */
+#id { }
+
+/* Elemento - tag */
+p { }
+div { }
+
+/* Descendente - qualquer ancestral */
+div p { }
+
+/* Filho direto - > */
+div > p { }
+
+/* Irmão adjacente - + (elemento imediatamente depois) */
+h1 + p { }
+
+/* Irmãos gerais - ~ */
+h1 ~ p { }
+
+/* Múltiplos seletores - mesma regra */
+h1, h2, .destaque { }
+
+/* Atributo - [atributo], [atributo="valor"] */
+[type="text"] { }
+[href] { }
+
+/* Pseudo-classes (estado) */
+:hover { }    /* ao passar o mouse */
+:focus { }    /* quando focado (ex: input) */
+:active { }   /* ao clicar */
+:first-child { }
+:last-child { }
+:nth-child(2) { }      /* segundo filho */
+:nth-child(odd) { }    /* ímpares */
+:nth-child(even) { }   /* pares */
+:not(.classe) { }      /* que não tenham a classe */
+
+/* Pseudo-elementos */
+::before { content: ""; }  /* antes do conteúdo */
+::after { content: ""; }   /* depois do conteúdo */
+::first-letter { }
+::first-line { }
+
+
+/* =============================================================================
+   12. VARIÁVEIS CSS (custom properties)
+   ============================================================================= */
+
+:root {
+  --cor-primaria: #3498db;
+  --cor-secundaria: #2ecc71;
+  --espacamento: 1rem;
+  --fonte-principal: "Arial", sans-serif;
+}
+
+.usar-variavel {
+  color: var(--cor-primaria);
+  padding: var(--espacamento);
+  font-family: var(--fonte-principal);
+  /* Valor fallback se a variável não existir: */
+  background: var(--cor-fundo, #fff);
+}
+
+
+/* =============================================================================
+   13. OUTRAS PROPRIEDADES MUITO USADAS
+   ============================================================================= */
+
+.outras {
+  /* Texto */
+  text-align: left;           /* left | center | right | justify */
+  text-decoration: none;      /* none | underline | overline | line-through */
+  text-transform: uppercase; /* uppercase | lowercase | capitalize */
+  line-height: 1.5;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+
+  /* Fontes */
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;          /* normal | bold | 100-900 */
+  font-style: italic;        /* normal | italic | oblique */
+
+  /* Overflow */
+  overflow: hidden;          /* hidden | scroll | auto | visible */
+  overflow-x: auto;
+  overflow-y: scroll;
+
+  /* Cursor */
+  cursor: pointer;           /* pointer | default | not-allowed | wait */
+
+  /* Opacidade (0 a 1) */
+  opacity: 0.8;
+
+  /* Sombra */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);  /* x y blur cor */
+  text-shadow: 1px 1px 2px black;
+
+  /* Z-index (empilhamento, só funciona com position != static) */
+  z-index: 10;
+
+  /* Object-fit (em imagens/vídeo dentro de um container) */
+  object-fit: cover;         /* cover | contain | fill | none */
+
+  /* Pointer-events (clicável ou não) */
+  pointer-events: none;     /* elemento não recebe cliques */
+}
+
+
+/* =============================================================================
+   14. RESET / NORMALIZE (opcional - zerar estilos do navegador)
+   ============================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =============================================================================
+   FIM DA REFERÊNCIA - Boa prova!
+   ============================================================================= */
