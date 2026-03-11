@@ -1,0 +1,243 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Container principal centralizado */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* ========== HEADER ========== */
+header {
+    background-color: #87ceeb;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.container-imagem {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.container-imagem img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+}
+
+.container-imagem h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #228b22;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-texto {
+    background-color: #87ceeb;
+    width: 100%;
+}
+
+.container-texto nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+}
+
+.container-texto ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.container-texto a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.container-texto a:hover {
+    text-decoration: underline;
+}
+
+/* ========== TÍTULOS DAS SEÇÕES ========== */
+main > h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin: 30px 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== SEÇÃO INTRODUÇÃO ========== */
+.section-introducao {
+    margin-bottom: 40px;
+}
+
+.section-introducao p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+    color: #533c82;
+    text-align: justify;
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+
+/* ========== SEÇÃO LIVROS ========== */
+.section-livros {
+    margin-bottom: 40px;
+}
+
+.container-livros {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.container-livros img {
+    max-height: 280px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ========== SEÇÃO VÍDEO E MAPA ========== */
+.section-video {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .section-video {
+        flex-direction: column;
+    }
+}
+
+.section-video iframe:first-of-type {
+    width: 300px;
+    aspect-ratio: 16 / 9;
+    min-height: 300px;
+    border: 0;
+    background: #1a1a1a;
+}
+
+.section-video iframe:last-of-type {
+    width: 300px;
+    height: 300px;
+    border: 0;
+}
+
+/* ========== TABELA CONTATOS ========== */
+.table-contatos {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table-contatos td,
+.table-contatos th {
+    border: 1px solid #333;
+    padding: 10px 14px;
+    text-align: left;
+}
+
+.table-contatos tr:first-child td {
+    font-weight: bold;
+    background-color: transparent;
+}
+
+/* ========== SITES PARA CONSULTA ========== */
+main > div:has(h4) {
+    background-color: #ffeb3b;
+    padding: 16px 24px;
+    margin-top: 20px;
+}
+
+main > div h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main > div ul {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+main > div li {
+    margin-bottom: 6px;
+}
+
+main > div a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+main > div a:hover {
+    color: #551a8b;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    margin-top: 40px;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+    background-color: #87ceeb;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+footer img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+footer p {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 15pt;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+footer p:first-of-type {
+    font-weight: normal;
+}
