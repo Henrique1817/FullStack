@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="piloto">My JavaScript Project</h1>
+    <button id="resultado" onclick="gerarNumeroAleatorio()">Gerar Número Aleatório</button>
+    <p id="numero"></p>
+
+    <input type="text" id="valor" placeholder="Digite um valor">
+    <button onclick="avaliarNota()">Enviar Valor</button>
+    <p id="valorRecebido"></p>
+
+    <!--  Exercício 3 - Faça uma página simplificada de cadastro.
+     A página deve ter três entradas: Nome, Login e Senha.
+     A página deve ter também 3 botões: Cadastrar, Limpar e Mostrar Dados. 
+     Você só pode fazer o cadastro de uma pessoa de cada vez.
+     Assim, você não pode cadastrar uma pessoa se as variáveis já estiverem 
+     ocupadas. Nesse caso, exiba um alerta. Se você quiser cadastrar uma pessoa 
+     nova, utilize o botão limpar antes.
+       Você só pode cadastrar uma pessoa se todos os campos estiverem preenchidos. 
+     A entrada "Senha" precisa ser do tipo password.
+     O botão Mostrar Dados exibe todos os dados da pessoa como conteúdo da página.
+     -->
+
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <input type="text" id="login" placeholder="Digite seu login">
+    <input type="password" id="senha" placeholder="Digite sua senha">
+    <button onclick="cadastrarPessoa()">Cadastrar</button>
+    <button onclick="limparCampos()">Limpar</button>
+    <button onclick="mostrarDados()">Mostrar Dados</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

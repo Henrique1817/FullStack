@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(131, 211, 131);
+}
