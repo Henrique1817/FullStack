@@ -31,9 +31,9 @@ var publicPrimeiro = path.join(
 var server = http.createServer(app);
 server.listen(80, function () {
   console.log("servidor rodando na porta 80");
-  console.log("http://localhost/primeiroSemetres/projects.html");
-  console.log("http://localhost/cadastra  (Cadastro.html)");
-  console.log("http://localhost/login     (Login.html)");
+  console.log("http://localhost/primeiroSemetres/index.html");
+  // console.log("http://localhost/cadastra  (Cadastro.html)");
+  // console.log("http://localhost/login     (Login.html)");
 });
 
 // Raiz: página de projetos
