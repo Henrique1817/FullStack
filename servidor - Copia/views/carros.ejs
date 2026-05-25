@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Carros</title>
+    <link rel="stylesheet" href="/lab10/carros.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carros Disponíveis</h1>
+        <div class="nav">
+            <a href="/gerenciar">Gerenciar Carros</a>
+            <a href="/loginCarros">Login</a>
+        </div>
+        <hr>
+
+        <% if (carros.length == 0) { %>
+            <p>Nenhum carro cadastrado.</p>
+        <% } else { %>
+            <table>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Quantidade</th>
+                </tr>
+                <% carros.forEach(function(carro) { %>
+                <tr>
+                    <td><%= carro.marca %></td>
+                    <td><%= carro.modelo %></td>
+                    <td><%= carro.ano %></td>
+                    <td>
+                        <% if (carro.qtde_disponivel == 0) { %>
+                            <span class="esgotado">Esgotado</span>
+                        <% } else { %>
+                            <%= carro.qtde_disponivel %>
+                        <% } %>
+                    </td>
+                </tr>
+                <% }) %>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>

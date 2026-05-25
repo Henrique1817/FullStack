@@ -1,0 +1,37 @@
+body {
+    background-color: #2c2c2c; /* Cor de fundo - Valor 0.5 */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Centralização dos elementos - Valor 0.5 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#caixa-jogo {
+    background-color: #3d3d3d;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #555;
+}
+
+.input-numero {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.botao-enviar {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #00bcff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

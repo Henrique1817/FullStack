@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio acadêmico e profissional — Henrique. Desenvolvimento web, dados e projetos."
+    />
+    <title>Henrique — LAB 1 · Página inicial (portfólio)</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="lab.css" />
+  </head>
+  <body class="lab-portfolio">
+    <header id="main-header" class="lab-header">
+      <nav id="main-nav" aria-label="Principal">
+        <a class="nav-link" href="../../index.html">Portal</a>
+        <a class="nav-link" href="../../projects.html">Laboratórios</a>
+        <a class="nav-link" href="/login">Login</a>
+      </nav>
+    </header>
+
+    <main class="lab-main">
+      <section class="container hero-lab">
+        <p class="lab-tag">LAB 1 — Página inicial</p>
+        <h1>Henrique</h1>
+        <p class="lead">
+          Desenvolvedor front-end em formação, interessado em interfaces claras,
+          dados e boas práticas de acessibilidade. Esta página funciona como
+          esqueleto do meu portfólio profissional.
+        </p>
+        <p>
+          Curso disciplinas de desenvolvimento web full stack, experimentando
+          HTML semântico, CSS, JavaScript e integração com servidores. Gosto de
+          aprender na prática, documentar o processo e evoluir o código com
+          feedback contínuo.
+        </p>
+      </section>
+
+      <section class="container">
+        <h2>Foco e stack</h2>
+        <ul class="skills-list">
+          <li>HTML5, CSS3 e responsividade</li>
+          <li>JavaScript e consumo de APIs</li>
+          <li>Noções de análise de dados e visualização</li>
+          <li>Versionamento com Git e colaboração em GitHub</li>
+        </ul>
+      </section>
+
+      <section class="container">
+        <h2>Referências e presença online</h2>
+        <p>
+          Três links externos que uso quase todos os dias para estudar e
+          compartilhar código:
+        </p>
+        <ul class="links-list">
+          <li>
+            <a
+              class="ext-link"
+              href="https://github.com/Henrique1817"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub — Henrique1817</a
+            >
+          </li>
+          <li>
+            <a
+              class="ext-link"
+              href="https://developer.mozilla.org/pt-BR/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MDN Web Docs (documentação web)</a
+            >
+          </li>
+          <li>
+            <a
+              class="ext-link"
+              href="https://www.w3.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >W3C — padrões da web aberta</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="container">
+        <h2>Galeria (5 imagens)</h2>
+        <p class="muted">
+          Imagens de exemplo (Picsum) para compor o layout; depois substituo
+          por fotos de projetos reais.
+        </p>
+        <div class="gallery-grid">
+          <img
+            src="https://picsum.photos/seed/henrique-ui/480/300"
+            width="480"
+            height="300"
+            alt="Composição abstrata sugerindo interface de usuário"
+            loading="lazy"
+          />
+          <img
+            src="https://picsum.photos/seed/henrique-code/480/300"
+            width="480"
+            height="300"
+            alt="Composição abstrata sugerindo código em tela"
+            loading="lazy"
+          />
+          <img
+            src="https://picsum.photos/seed/henrique-data/480/300"
+            width="480"
+            height="300"
+            alt="Composição abstrata sugerindo visualização de dados"
+            loading="lazy"
+          />
+          <img
+            src="https://picsum.photos/seed/henrique-team/480/300"
+            width="480"
+            height="300"
+            alt="Composição abstrata sugerindo colaboração"
+            loading="lazy"
+          />
+          <img
+            src="https://picsum.photos/seed/henrique-build/480/300"
+            width="480"
+            height="300"
+            alt="Composição abstrata sugerindo construção de produto"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Mapa e mídia incorporada (3 iframes)</h2>
+        <p class="muted">
+          Incluo um mapa (Google Maps) e dois vídeos do YouTube em iframes, como
+          pedido no roteiro do laboratório.
+        </p>
+        <div class="iframe-grid">
+          <iframe
+            class="embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.6397214486924!2d-46.93374762391592!3d-23.509482959689784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf044dc909e02b%3A0x86c9aa18f401b0b6!2sKarting%20International%20Aldeia%20da%20Serra!5e0!3m2!1sen!2sbr!4v1770856063995!5m2!1sen!2sbr"
+            title="Mapa do Karting International Aldeia da Serra"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen=""
+          ></iframe>
+          <iframe
+            class="embed"
+            src="https://www.youtube.com/embed/dFF0mGFkX98"
+            title="Vídeo incorporado 1"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen=""
+          ></iframe>
+          <iframe
+            class="embed"
+            src="https://www.youtube.com/embed/vwhP4yurzis"
+            title="Vídeo incorporado 2"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen=""
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container lab-footer">
+      <p>
+        <a class="nav-link" href="../../projects.html">← Voltar aos laboratórios</a>
+      </p>
+    </footer>
+  </body>
+</html>

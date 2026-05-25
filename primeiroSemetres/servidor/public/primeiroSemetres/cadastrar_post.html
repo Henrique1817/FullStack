@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastrar post — Blog</title>
+    <link rel="stylesheet" href="/primeiroSemetres/blog-lab.css" />
+  </head>
+  <body class="blog-page">
+    <div class="blog-wrap">
+      <header class="blog-header">
+        <h1>Novo post</h1>
+        <p class="blog-lead">Preencha título, resumo e conteúdo. Os dados vão para o SQLite.</p>
+      </header>
+
+      <main class="blog-main">
+        <form class="form-post" action="/blog/post" method="post">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" type="text" required maxlength="200" />
+
+          <label for="resumo">resumo</label>
+          <input id="resumo" name="resumo" type="text" required maxlength="500" />
+
+          <label for="conteudo">conteúdo</label>
+          <textarea id="conteudo" name="conteudo" rows="8" required></textarea>
+
+          <button type="submit">Publicar post</button>
+        </form>
+      </main>
+
+      <nav class="blog-nav">
+        <a href="/blog">Voltar ao blog</a>
+        <a href="/primeiroSemetres/projects.html">Projetos</a>
+      </nav>
+    </div>
+  </body>
+</html>

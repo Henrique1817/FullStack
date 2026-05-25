@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Novo Post</h1>
+        <form action="/lab9/criarPost" method="POST">
+            <label>Título:</label>
+            <input type="text" name="titulo" required>
+            
+            <label>Resumo:</label>
+            <input type="text" name="resumo" required>
+            
+            <label>Conteúdo:</label>
+            <textarea name="conteudo" rows="6" required></textarea>
+            
+            <button type="submit">Publicar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Carros</title>
+    <link rel="stylesheet" href="/lab10/carros.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciar Carros</h1>
+        <div class="nav">
+            <a href="/cadastroCarro">Cadastrar Novo Carro</a>
+            <a href="/carros">Ver Listagem</a>
+            <a href="/loginCarros">Login</a>
+        </div>
+        <hr>
+
+        <% if (carros.length == 0) { %>
+            <p>Nenhum carro cadastrado. <a href="/cadastroCarro">Cadastrar agora</a></p>
+        <% } else { %>
+            <table>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Qtde</th>
+                    <th>Ações</th>
+                </tr>
+                <% carros.forEach(function(carro) { %>
+                <tr>
+                    <td><%= carro.marca %></td>
+                    <td><%= carro.modelo %></td>
+                    <td><%= carro.ano %></td>
+                    <td>
+                        <% if (carro.qtde_disponivel == 0) { %>
+                            <span class="esgotado">Esgotado</span>
+                        <% } else { %>
+                            <%= carro.qtde_disponivel %>
+                        <% } %>
+                    </td>
+                    <td>
+                        <!-- Vender -->
+                        <% if (carro.qtde_disponivel > 0) { %>
+                            <form action="/venderCarro" method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="<%= carro._id %>">
+                                <button type="submit" class="btn-vender">Vender</button>
+                            </form>
+                        <% } %>
+
+                        <!-- Editar -->
+                        <a href="/editarCarro/<%= carro._id %>" class="btn-editar">Editar</a>
+
+                        <!-- Remover -->
+                        <form action="/removerCarro" method="POST" style="display:inline">
+                            <input type="hidden" name="id" value="<%= carro._id %>">
+                            <button type="submit" class="btn-remover" onclick="return confirm('Tem certeza?')">Remover</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>

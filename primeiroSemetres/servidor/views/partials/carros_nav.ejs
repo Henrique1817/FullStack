@@ -1,0 +1,12 @@
+<nav class="carros-nav">
+  <a href="/carros">Início carros</a>
+  <a href="/carros/listagem">Listagem</a>
+  <a href="/carros/usuario/cadastro">Cadastro usuário</a>
+  <a href="/carros/usuario/login">Login</a>
+  <% if (carrosLogado) { %>
+    <a href="/carros/gerencia">Gerência</a>
+    <a href="/carros/novo">Novo carro</a>
+    <form class="inline-logout" action="/carros/logout" method="post"><button type="submit">Sair</button></form>
+  <% } %>
+  <a href="/primeiroSemetres/projects.html">Projetos</a>
+</nav>

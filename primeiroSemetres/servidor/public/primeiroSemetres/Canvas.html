@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LAB 5 — Canvas</title>
+    <link rel="stylesheet" href="canvas-lab.css" />
+  </head>
+  <body>
+    <h1>LAB 5 — Canvas</h1>
+    <p class="subtitulo">
+      Duas áreas 300×300: paisagem (referência
+      <code>labs/lab05/image 2.png</code>) e composição geométrica
+      (<code>labs/lab05/image.png</code>).
+    </p>
+    <p class="nav-lab">
+      <a href="projects.html">← Voltar à lista de laboratórios</a>
+    </p>
+
+    <section class="cena" aria-labelledby="titulo-cena1">
+      <h2 id="titulo-cena1">Cena 1 — Casa e paisagem</h2>
+      <canvas id="canvas-paisagem" width="300" height="300" aria-label="Desenho da paisagem"></canvas>
+    </section>
+
+    <section class="cena" aria-labelledby="titulo-cena2">
+      <h2 id="titulo-cena2">Cena 2 — Composição &quot;Canvas&quot;</h2>
+      <canvas id="canvas-geometrico" width="300" height="300" aria-label="Desenho geométrico"></canvas>
+    </section>
+
+    <script src="canvas-lab.js"></script>
+  </body>
+</html>

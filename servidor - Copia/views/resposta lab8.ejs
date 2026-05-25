@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta do Login</title>
+    <link rel="stylesheet" href="/lab8/auth.css">
+</head>
+<body>
+    <div class="container">
+        <% if (sucesso) { %>
+            <div class="msg sucesso">
+                <h1>✅ Login realizado!</h1>
+                <p>Bem-vindo, <strong><%= nome %></strong>!</p>
+            </div>
+        <% } else { %>
+            <div class="msg erro">
+                <h1>❌ Login inválido!</h1>
+                <p>E-mail, login ou senha incorretos.</p>
+            </div>
+        <% } %>
+        <a href="/login" class="btn">Login LAB 8</a>
+        <a href="/loginCarros" class="btn">Login LAB 10 (carros)</a>
+    </div>
+</body>
+</html>

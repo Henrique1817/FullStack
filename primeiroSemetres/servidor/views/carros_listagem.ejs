@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carros disponíveis — LAB 10</title>
+    <link rel="stylesheet" href="/primeiroSemetres/carros-lab.css" />
+  </head>
+  <body class="carros-page">
+    <div class="carros-wrap">
+      <%- include('partials/carros_nav') %>
+      <main class="carros-card">
+        <h1>Listagem dos carros disponíveis</h1>
+        <p class="carros-lead">Conteúdo dinâmico a partir do banco (Read).</p>
+        <% if (!carros || carros.length === 0) { %>
+          <p>Nenhum carro cadastrado.</p>
+        <% } else { %>
+          <ul class="lista-carros">
+            <% carros.forEach(function (c) { %>
+              <li>
+                <strong><%= c.marca %> <%= c.modelo %></strong> — <%= c.ano %> —
+                <% if (c.qtde_disponivel <= 0) { %>
+                  <span class="badge-esgotado">Esgotado</span>
+                <% } else { %>
+                  Quantidade: <%= c.qtde_disponivel %>
+                <% } %>
+              </li>
+            <% }); %>
+          </ul>
+        <% } %>
+      </main>
+    </div>
+  </body>
+</html>

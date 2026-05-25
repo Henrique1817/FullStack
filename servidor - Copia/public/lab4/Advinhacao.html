@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body id="tela-fundo">
+
+    <div id="caixa-jogo">
+        <h1>Adivinhação</h1>
+        <p>Digite um número de 0 a 99:</p>
+        
+        <!-- Input para receber o número - Valor 1.0 -->
+        <input type="number" id="chute" class="input-numero" placeholder="Ex: 42">
+        <br>
+        <button class="botao-enviar" onclick="verificarAcerto()">Tentar!</button>
+        
+        <p id="mensagem"></p>
+        <br>
+        <a href="projects.html" style="color: white;">Voltar para Projetos</a>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>

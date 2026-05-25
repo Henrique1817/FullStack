@@ -1,0 +1,107 @@
+/* LAB 4 — Adivinhação: fundo da página + centralização */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #1e3a5f;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #e8f1ff;
+}
+
+#painel-jogo {
+  width: 100%;
+  max-width: 420px;
+  padding: 1.75rem 1.5rem 2rem;
+  border-radius: 16px;
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: background-color 0.25s ease;
+}
+
+#painel-jogo h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.65rem;
+}
+
+#painel-jogo .instrucao {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+#painel-jogo label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+#chute {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+}
+
+#chute:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+#btn-chutar {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+#btn-chutar:hover {
+  filter: brightness(1.08);
+}
+
+#mensagem {
+  min-height: 1.5rem;
+  margin: 0 0 1rem;
+  font-weight: 600;
+  color: #7dd3fc;
+}
+
+.voltar-labs {
+  margin-top: 0.5rem;
+}
+
+.voltar-labs a {
+  color: #93c5fd;
+  font-size: 0.9rem;
+}
+
+.voltar-labs a:hover {
+  text-decoration: underline;
+}

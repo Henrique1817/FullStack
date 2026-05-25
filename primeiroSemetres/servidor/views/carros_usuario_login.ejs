@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login de usuário — Carros</title>
+    <link rel="stylesheet" href="/primeiroSemetres/carros-lab.css" />
+  </head>
+  <body class="carros-page">
+    <div class="carros-wrap">
+      <%- include('partials/carros_nav') %>
+      <main class="carros-card">
+        <h1>Login de usuário</h1>
+        <% if (typeof erro !== 'undefined' && erro) { %>
+          <p class="msg-erro"><%= erro %></p>
+        <% } %>
+        <form method="post" action="/carros/usuario/login">
+          <label for="login">Login</label>
+          <input id="login" name="login" type="text" required autocomplete="username" />
+
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" required autocomplete="current-password" />
+
+          <button type="submit">Entrar</button>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eaf2ff;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    width: 700px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+h1 {
+    color: #1a6fc4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #1a6fc4;
+    margin-bottom: 15px;
+}
+
+/* Nav de links */
+.nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.nav a {
+    background-color: #1a6fc4;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    background-color: #155a9e;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background-color: #1a6fc4;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: #f0f7ff;
+}
+
+.esgotado {
+    color: red;
+    font-weight: bold;
+}
+
+/* Botões da tabela */
+.btn-vender {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-vender:hover { background-color: #218838; }
+
+.btn-remover {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.btn-remover:hover { background-color: #b02a37; }
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-editar:hover { background-color: #e0a800; }
+
+/* Formulários */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #1a6fc4;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1a6fc4;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    background-color: #1a6fc4;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #155a9e;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+p a {
+    color: #1a6fc4;
+    text-decoration: none;
+}
+
+p a:hover { text-decoration: underline; }
+
+.msg-sucesso {
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.msg-erro {
+    background-color: #f8d7da;
+    border: 1px solid #dc3545;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}

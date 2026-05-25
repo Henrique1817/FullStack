@@ -1,0 +1,32 @@
+.ass{
+    background-color: red;
+    color: white;
+}
+
+.menu{
+    display: flex;
+    text-align: center;
+    color: gray;
+    gap: 100px;
+    width: 50px;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titulo1{
+    color: red;
+}
+
+.carro{
+    background-color: red;
+}
+
+.cantora{
+    display: flex;
+    align-content: flex-end;
+    padding: 200px;
+    flex-direction: row;
+}

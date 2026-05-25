@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adivinhação — LAB 4</title>
+    <link rel="stylesheet" href="guess.css" />
+  </head>
+  <body>
+    <div id="painel-jogo">
+      <h1>Adivinhação</h1>
+      <p class="instrucao">
+        Pensei em um número inteiro de <strong>0</strong> a <strong>99</strong>
+        quando a página carregou. Digite na caixa até acertar.
+      </p>
+      <label for="chute">Seu palpite</label>
+      <input
+        id="chute"
+        name="chute"
+        type="number"
+        min="0"
+        max="99"
+        step="1"
+        inputmode="numeric"
+        placeholder="0 a 99"
+        autocomplete="off"
+      />
+      <button type="button" id="btn-chutar">Chutar</button>
+      <p id="mensagem" aria-live="polite"></p>
+      <p class="voltar-labs">
+        <a href="projects.html">← Voltar à lista de laboratórios</a>
+      </p>
+    </div>
+    <script src="guess.js"></script>
+  </body>
+</html>

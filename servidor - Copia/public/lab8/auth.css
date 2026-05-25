@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eaf2ff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 380px;
+    text-align: center;
+}
+
+h1 {
+    color: #1a6fc4;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #1a6fc4;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1a6fc4;
+}
+
+button[type="submit"], .btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #1a6fc4;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button[type="submit"]:hover, .btn:hover {
+    background-color: #155a9e;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+p a {
+    color: #1a6fc4;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagens de sucesso e erro */
+.msg {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.sucesso {
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    color: #155724;
+}
+
+.erro {
+    background-color: #f8d7da;
+    border: 1px solid #dc3545;
+    color: #721c24;
+}

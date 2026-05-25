@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Carro</title>
+    <link rel="stylesheet" href="/lab10/carros.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Carro</h1>
+        <div class="nav">
+            <a href="/gerenciar">← Voltar</a>
+        </div>
+        <hr>
+        <form action="/atualizarCarro" method="POST">
+            <input type="hidden" name="id" value="<%= carro._id %>">
+
+            <label>Marca:</label>
+            <input type="text" name="marca" value="<%= carro.marca %>" required>
+
+            <label>Modelo:</label>
+            <input type="text" name="modelo" value="<%= carro.modelo %>" required>
+
+            <label>Ano:</label>
+            <input type="number" name="ano" value="<%= carro.ano %>" required>
+
+            <label>Quantidade Disponível:</label>
+            <input type="number" name="qtde_disponivel" value="<%= carro.qtde_disponivel %>" min="0" required>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>

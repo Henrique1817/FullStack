@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gerência de carros — LAB 10</title>
+    <link rel="stylesheet" href="/primeiroSemetres/carros-lab.css" />
+  </head>
+  <body class="carros-page">
+    <div class="carros-wrap">
+      <%- include('partials/carros_nav') %>
+      <main class="carros-card">
+        <h1>Gerência dos carros</h1>
+        <p class="carros-lead">Olá, <strong><%= usuarioNome %></strong>. Update, delete e venda.</p>
+
+        <% if (typeof aviso !== 'undefined' && aviso === 'esgotado') { %>
+          <p class="msg-esgotado">Aviso: estoque deste carro chegou a zero — <strong>Esgotado</strong>.</p>
+        <% } %>
+        <% if (typeof aviso !== 'undefined' && aviso === 'ja_esgotado') { %>
+          <p class="msg-erro">Não foi possível vender: já está <strong>Esgotado</strong>.</p>
+        <% } %>
+
+        <p><a class="btn-link" href="/carros/novo">Cadastrar novo carro</a></p>
+
+        <% if (!carros || carros.length === 0) { %>
+          <p>Nenhum carro cadastrado.</p>
+        <% } else { %>
+          <table class="tabela-carros">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Qtde</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% carros.forEach(function (c) { %>
+                <tr>
+                  <td><%= c.id %></td>
+                  <td><%= c.marca %></td>
+                  <td><%= c.modelo %></td>
+                  <td><%= c.ano %></td>
+                  <td>
+                    <%= c.qtde_disponivel %>
+                    <% if (c.qtde_disponivel <= 0) { %>
+                      <span class="badge-esgotado">Esgotado</span>
+                    <% } %>
+                  </td>
+                  <td class="acoes">
+                    <a href="/carros/editar/<%= c.id %>">Atualizar</a>
+                    <form class="inline-form" method="post" action="/carros/vender/<%= c.id %>" onsubmit="return confirm('Registrar venda (-1 unidade)?');">
+                      <button type="submit" class="btn-vender">Vender</button>
+                    </form>
+                    <form class="inline-form" method="post" action="/carros/remover/<%= c.id %>" onsubmit="return confirm('Remover este carro?');">
+                      <button type="submit" class="btn-remover">Remover</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% } %>
+      </main>
+    </div>
+  </body>
+</html>

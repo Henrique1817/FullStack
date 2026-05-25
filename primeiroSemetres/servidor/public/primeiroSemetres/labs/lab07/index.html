@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LAB 7 — Servidor estático</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>LAB 7 — Servidor estático</h1>
+      <p class="lead">
+        O servidor Node + Express está em
+        <code>servidor/servidor.js</code> (porta <strong>80</strong>, pasta
+        <code>public/</code> estática, escuta em <code>0.0.0.0</code> para acesso
+        por IP na rede).
+      </p>
+      <ul>
+        <li>
+          <a href="/">Raiz do servidor (/)</a> — redireciona a
+          <code>projects.html</code> (LAB 8)
+        </li>
+        <li><a href="/Home.html">/Home.html</a> — portal (alias do enunciado)</li>
+        <li><a href="/Project.html">/Project.html</a> — laboratórios (alias)</li>
+      </ul>
+      <p>No Windows, use <code>ipconfig</code> para ver o IPv4 e abra no outro PC:
+        <code>http://192.168.x.x/Home.html</code> (ajuste o IP).</p>
+      <p><a class="btn" href="../projects.html">Voltar à lista de laboratórios</a></p>
+    </main>
+  </body>
+</html>

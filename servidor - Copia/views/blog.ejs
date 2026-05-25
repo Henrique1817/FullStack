@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/lab9/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blog</h1>
+        <a href="/lab9/criarPost.html" class="btn-novo">Escrever Novo Post</a>
+        <hr>
+
+        <div id="posts">
+            <% if (lista_posts.length == 0) { %>
+                <p>Nenhum post encontrado.</p>
+            <% } %>
+
+            <% lista_posts.forEach(function(post) { %>
+                <div class="card">
+                    <h2><%= post.titulo %></h2>
+                    <p class="resumo"><strong>Resumo:</strong> <%= post.resumo %></p>
+                    <p><%= post.conteudo %></p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>

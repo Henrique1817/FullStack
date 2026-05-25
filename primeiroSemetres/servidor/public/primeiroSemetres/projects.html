@@ -1,84 +1,184 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projetos</title>
+    <title>Laboratórios — Primeiro semestre</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <header id="main-header">
-      <h1>Projetos</h1>
-      <nav id="main-nav">
+    <header id="main-header">
+      <h1>Laboratórios</h1>
+      <nav id="main-nav" aria-label="Principal">
         <a class="nav-link" href="index.html">Início</a>
-        <a class="nav-link" href="projects.html">Projetos</a>
+        <a class="nav-link" href="projects.html">Laboratórios</a>
         <a class="nav-link" href="/login">Login</a>
       </nav>
     </header>
 
     <main class="container">
       <section>
-        <p class="lead">Aqui vamos compor os projetos ao longo do curso.</p>
+        <p class="lead">
+          Lista dos 10 laboratórios. Cada um fica em uma pasta em
+          <code>public/primeiroSemetres/labs/</code>, com link direto abaixo.
+        </p>
 
-        <table id="projects-table">
+        <table class="stack-table">
           <thead>
             <tr>
-              <th>Nome do Projeto</th>
-              <th>Link do projeto</th>
-            </tr>
-            <tr>
-                <th>CineMax</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/CineMax">https://github.com/Henrique1817/CineMax</a>
-                </th>
-            </tr>
-            <tr>
-                <th>CineMax_HTML</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/CineMax_HTML">https://github.com/Henrique1817/CineMax_HTML</a>
-                </th>
-            </tr>
-            <tr>
-                <th>Becco7Burguer</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/Becco7Burguer">https://github.com/Henrique1817/Becco7Burguer</a>
-                </th>
-            </tr>
-            <tr>
-                <th>Learn-Music</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/Learn-Music">https://github.com/Henrique1817/Learn-Music</a>
-                </th>
-            </tr>
-            <tr>
-                <th>stock-api</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/stock-api">https://github.com/Henrique1817/stock-api</a>
-                </th>
-            </tr>
-            <tr>
-                <th>Restaurante---Termo</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/Restaurante---Termo">https://github.com/Henrique1817/Restaurante---Termo</a>
-                </th>
-            </tr>
-            <tr>
-                <th>Doceria---Termo</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/Doceria---Termo">https://github.com/Henrique1817/Doceria---Termo</a>
-                </th>
-            </tr>
-            <tr>
-                <th>ALL</th>
-                <th>
-                    <a href="https://github.com/Henrique1817/ALL">https://github.com/Henrique1817/ALL</a>
-                </th>
+              <th>Lab</th>
+              <th>Tema</th>
+              <th>Página</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Get - Post - Template</td>
-              <td><a href="/login">Login (Get - Post - Template)</a></td>
+              <td>LAB 1</td>
+              <td>Página inicial (portfólio HTML)</td>
+              <td>
+                <a href="labs/lab01-pagina-inicial/index.html">Abrir LAB 1</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 2</td>
+              <td>Esqueleto do site (HTML + CSS, menu e tabela)</td>
+              <td><a href="labs/lab02/index.html">Abrir LAB 2</a></td>
+            </tr>
+            <tr>
+              <td>LAB 3</td>
+              <td>C++ e Java (layout conforme referência)</td>
+              <td><a href="labs/lab03/index.html">Abrir LAB 3</a></td>
+            </tr>
+            <tr>
+              <td>LAB 4</td>
+              <td>Adivinhação (0 a 99)</td>
+              <td>
+                <a href="guess.html">Adivinhação</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 5</td>
+              <td>Canvas (300×300, funções de desenho)</td>
+              <td>
+                <a href="Canvas.html">Canvas</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 6</td>
+              <td>Animação (imagem segue o mouse)</td>
+              <td>
+                <a href="Animation.html">Animação</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 7</td>
+              <td>Servidor estático (Express, porta 80, rede local)</td>
+              <td>
+                <a href="/">Início do servidor</a>
+                ·
+                <a href="/Home.html">Home.html</a>
+                ·
+                <a href="/Project.html">Project.html</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 8</td>
+              <td>Get — Post — Template (cadastro, login, resposta.ejs)</td>
+              <td>
+                <a href="/login">Get - Post - Template</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 9</td>
+              <td>BD — Blog (SQLite, create + read)</td>
+              <td>
+                <a href="/blog">Blog</a>
+              </td>
+            </tr>
+            <tr>
+              <td>LAB 10</td>
+              <td>Carros — BD (CRUD, venda, EJS)</td>
+              <td>
+                <a href="/carros">Carros</a>
+                ·
+                <a href="labs/lab10/index.html">Pasta LAB 10</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3"><strong>Rotas do Express (mesmo fluxo do LAB 8)</strong></td>
+            </tr>
+            <tr>
+              <td>—</td>
+              <td>Get / Post / template — Login</td>
+              <td><a href="/login">Abrir rota /login</a></td>
+            </tr>
+            <tr>
+              <td>—</td>
+              <td>Cadastro (rota /cadastra)</td>
+              <td><a href="/cadastra">Abrir rota /cadastra</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="containerList" style="margin-top: 2rem">
+        <h2 style="margin-top: 0; color: #eaf6ff">Repositórios no GitHub</h2>
+        <p>Projetos paralelos ao curso (mantidos como referência).</p>
+        <table class="stack-table">
+          <thead>
+            <tr>
+              <th>Repositório</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CineMax</td>
+              <td>
+                <a href="https://github.com/Henrique1817/CineMax">github.com/Henrique1817/CineMax</a>
+              </td>
+            </tr>
+            <tr>
+              <td>CineMax_HTML</td>
+              <td>
+                <a href="https://github.com/Henrique1817/CineMax_HTML">github.com/Henrique1817/CineMax_HTML</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Becco7Burguer</td>
+              <td>
+                <a href="https://github.com/Henrique1817/Becco7Burguer">github.com/Henrique1817/Becco7Burguer</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Learn-Music</td>
+              <td>
+                <a href="https://github.com/Henrique1817/Learn-Music">github.com/Henrique1817/Learn-Music</a>
+              </td>
+            </tr>
+            <tr>
+              <td>stock-api</td>
+              <td>
+                <a href="https://github.com/Henrique1817/stock-api">github.com/Henrique1817/stock-api</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Restaurante---Termo</td>
+              <td>
+                <a href="https://github.com/Henrique1817/Restaurante---Termo">github.com/Henrique1817/Restaurante---Termo</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Doceria---Termo</td>
+              <td>
+                <a href="https://github.com/Henrique1817/Doceria---Termo">github.com/Henrique1817/Doceria---Termo</a>
+              </td>
+            </tr>
+            <tr>
+              <td>ALL</td>
+              <td>
+                <a href="https://github.com/Henrique1817/ALL">github.com/Henrique1817/ALL</a>
+              </td>
             </tr>
           </tbody>
         </table>

@@ -1,0 +1,91 @@
+
+.cab{
+    display: flex;
+    text-align: center;
+    background-color: blanchedalmond;
+    color: green;
+    border: solid 5px blue;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu{
+    display: flex;
+    text-align: center;
+    background-color: aqua;
+    color: darkred;
+    justify-content: center;
+    gap: 150px;
+    align-items: center;
+}
+
+.cab img{    justify-content: space-between;
+    background-color: blanchedalmond;
+    width: 250px;
+
+}
+
+section{
+    text-align: center;
+    color:blue ;
+}
+
+.titulo1{
+    text-align: center;
+    color: black;
+}
+
+.titulo2{
+    text-align: center;
+    color: black;
+}
+
+.li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.titulo3{
+    text-align: center;
+    color: black;
+}
+
+.frame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.titulo4{
+    text-align: center;
+    color: black;
+}
+
+.container{
+    max-width: 900px;
+    margin: 2rem auto;
+    border: dotted 2px red;
+}
+
+.rod{
+    display: flex;
+    text-align: center;
+    background-color: blanchedalmond;
+    color: green;
+    border: solid 5px blue;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rod img{    justify-content: space-between;
+    background-color: blanchedalmond;
+    width: 250px;
+}
+
+body{
+    background-color: lightgray;
+}

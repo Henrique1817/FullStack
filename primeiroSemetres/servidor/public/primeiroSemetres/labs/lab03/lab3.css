@@ -1,0 +1,268 @@
+/* LAB 3 — página de referência C++ e Java (seletores tag, classe, id + hover) */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: lightgray;
+  font-family: sans-serif;
+  font-size: 20pt;
+  color: indigo;
+}
+
+/* Container central */
+#wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  background-color: lightgray;
+}
+
+/* Cabeçalho: logos + título */
+#page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 0.75rem;
+  background-color: #fffef5;
+  border-bottom: 3px solid lightskyblue;
+}
+
+.logo-cpp,
+.logo-java {
+  display: block;
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+}
+
+#page-header h1 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.2rem;
+  color: darkgreen;
+  font-weight: bold;
+}
+
+/* Barra de navegação */
+#menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 0.55rem 1rem;
+  background-color: lightskyblue;
+  border-bottom: 2px solid #6ca6cd;
+}
+
+#menu-principal a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: darkblue;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+#menu-principal a:hover {
+  text-decoration: underline;
+  color: #000080;
+}
+
+/* Blocos de conteúdo */
+.conteudo {
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #000;
+  margin: 1rem 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.texto-intro {
+  text-align: justify;
+  text-indent: 2rem;
+  margin: 0.65rem 0;
+  line-height: 1.35;
+}
+
+.nota-fonte {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 0.35rem;
+  color: indigo;
+}
+
+/* Livros em linha */
+#livros .fileiras-livros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+#livros .fileiras-livros img {
+  height: 260px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border: 1px solid #999;
+}
+
+/* Vídeo + mapa */
+#videos .midia-linha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+#videos .midia-linha iframe {
+  flex: 1 1 340px;
+  max-width: 100%;
+  min-height: 240px;
+  border: 2px solid #666;
+  background: #000;
+}
+
+/* Tabela contatos */
+#tabela-contatos {
+  margin: 0.75rem auto 1.25rem;
+  border-collapse: collapse;
+  border: 2px dashed red;
+  background-color: #ffffff;
+}
+
+#tabela-contatos th,
+#tabela-contatos td {
+  border: 2px dashed red;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+#tabela-contatos th {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fffacd;
+}
+
+#tabela-contatos td {
+  color: indigo;
+  background-color: #ffffff;
+}
+
+/* Caixa amarela — sites */
+#box-links {
+  max-width: 520px;
+  margin: 1rem auto 1.5rem;
+  padding: 0.75rem 1.25rem 1rem;
+  background-color: yellow;
+  border: 1px solid #c9a000;
+}
+
+#box-links .titulo-links {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 1.1rem;
+}
+
+#box-links ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+#box-links li {
+  margin: 0.35rem 0;
+  color: #000;
+}
+
+#box-links a {
+  color: red;
+  word-break: break-all;
+}
+
+#box-links a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+#page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background-color: bisque;
+  border-top: 2px solid #deb887;
+}
+
+#page-footer .logo-footer {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+#texto-rodape {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15pt;
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.voltar-labs {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.voltar-labs a {
+  color: darkblue;
+}
+
+.voltar-labs a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  #page-header h1 {
+    font-size: 1.45rem;
+  }
+
+  .logo-cpp,
+  .logo-java {
+    height: 48px;
+  }
+
+  #menu-principal {
+    gap: 1rem;
+  }
+
+  body {
+    font-size: 16pt;
+  }
+}

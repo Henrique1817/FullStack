@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Novo carro — LAB 10</title>
+    <link rel="stylesheet" href="/primeiroSemetres/carros-lab.css" />
+  </head>
+  <body class="carros-page">
+    <div class="carros-wrap">
+      <%- include('partials/carros_nav') %>
+      <main class="carros-card">
+        <h1>Cadastrar novo carro</h1>
+        <form method="post" action="/carros/novo">
+          <label for="marca">Marca</label>
+          <input id="marca" name="marca" type="text" required />
+
+          <label for="modelo">Modelo</label>
+          <input id="modelo" name="modelo" type="text" required />
+
+          <label for="ano">Ano</label>
+          <input id="ano" name="ano" type="number" min="1900" max="2100" required />
+
+          <label for="qtde_disponivel">Qtde_disponivel</label>
+          <input id="qtde_disponivel" name="qtde_disponivel" type="number" min="0" required />
+
+          <button type="submit">Salvar</button>
+        </form>
+        <p><a href="/carros/gerencia">Voltar à gerência</a></p>
+      </main>
+    </div>
+  </body>
+</html>

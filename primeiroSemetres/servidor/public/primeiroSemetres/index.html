@@ -1,101 +1,42 @@
 <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal — Primeiro semestre (Full Stack)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-      <section>
-        <header id="main-header">
-          <h1>Bem-vindo ao meu site</h1>
-          <nav id="main-nav">
-            <a class="nav-link" href="index.html">Início</a>
-            <a class="nav-link" href="projects.html">Projetos</a>
-          </nav>
-        </header>
-        <section class="container">
-          <p class="lead">Analista de Dados | Desenvolvedor Front-End | Programador em Evolução👋</p>
-          <p>Use o menu acima para navegar entre as páginas.</p>
-          <a class="btn" href="projects.html">Ver Projetos</a>
-        </section>
-      <section>
-      <div class="container">
-        <p>
-          Sou um profissional apaixonado por transformar dados em insights
-          acionáveis e por criar interfaces web intuitivas e eficientes. Minha
-          jornada é guiada pela curiosidade e por um compromisso com a
-          aprendizagem contínua.
+      <header id="main-header">
+        <h1>Portal acadêmico</h1>
+        <nav id="main-nav" aria-label="Principal">
+          <a class="nav-link" href="index.html">Início</a>
+          <a class="nav-link" href="projects.html">Laboratórios</a>
+          <a class="nav-link" href="/login">Login</a>
+        </nav>
+      </header>
+
+      <section class="container">
+        <p class="lead">
+          Olá — aqui concentro os laboratórios da disciplina e o acesso rápido a
+          exercícios (cadastro, login e demais entregas). Com o servidor no ar,
+          a URL <code>http://localhost/</code> abre direto a lista de
+          laboratórios (<code>projects.html</code>); use esta página como portal
+          por <code>/Home.html</code> ou pelo menu abaixo.
         </p>
-      </div>
-      <div class="containerList">
-        <ul>
-          <li><a href="https://www.youtube.com/">Youtube</a></li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=OsoeYYhae5g"
-            >900HP TUNED 2025 BMW M4 COMPETITION</a
+        <p>
+          Use <strong>Laboratórios</strong> para abrir a lista com os 10 labs,
+          cada um em sua própria pasta. O
+          <strong>LAB 1</strong> é a página inicial / portfólio em HTML.
+        </p>
+        <p>
+          <a class="btn" href="projects.html">Abrir laboratórios</a>
+          <a class="btn btn-secondary" href="labs/lab01-pagina-inicial/index.html"
+            >Ir direto ao LAB 1</a
           >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=pWw-UENvdTw"
-              >Forza Horizon 6</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="container">
-      <img src="src/assets/public/r31.png" height="120" />
-      <img src="src/assets/public/r32.png" height="120" />
-      <img src="src/assets/public/r33.png" height="120" />
-      <img src="src/assets/public/r34.png" height="120" />
-      <img src="src/assets/public/r35.png" height="120" />
-      </div>
-      <div class="container">
-      <iframe
-        width="360"
-        height="360"
-        src="https://www.youtube.com/embed/dFF0mGFkX98?si=BH4jJYYf6dbHx-Bb"
-        title="YouTube video player"
-        frameborder="0"
-        allow="
-          accelerometer;
-          autoplay;
-          clipboard-write;
-          encrypted-media;
-          gyroscope;
-          picture-in-picture;
-          web-share;
-        "
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.6397214486924!2d-46.93374762391592!3d-23.509482959689784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf044dc909e02b%3A0x86c9aa18f401b0b6!2sKarting%20International%20Aldeia%20da%20Serra!5e0!3m2!1sen!2sbr!4v1770856063995!5m2!1sen!2sbr"
-        width="360"
-        height="360"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <iframe
-        width="360"
-        height="360"
-        src="https://www.youtube.com/embed/vwhP4yurzis?si=NZ4-OUrY_wUZLC4c"
-        title="YouTube video player"
-        frameborder="0"
-        allow="
-          accelerometer;
-          autoplay;
-          clipboard-write;
-          encrypted-media;
-          gyroscope;
-          picture-in-picture;
-          web-share;
-        "
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-      </div>
+        </p>
+      </section>
     </main>
   </body>
 </html>

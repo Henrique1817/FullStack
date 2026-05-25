@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atualizar carro — LAB 10</title>
+    <link rel="stylesheet" href="/primeiroSemetres/carros-lab.css" />
+  </head>
+  <body class="carros-page">
+    <div class="carros-wrap">
+      <%- include('partials/carros_nav') %>
+      <main class="carros-card">
+        <h1>Atualizar carro</h1>
+        <% if (!carro) { %>
+          <p>Carro não encontrado.</p>
+        <% } else { %>
+          <form method="post" action="/carros/editar/<%= carro.id %>">
+            <label for="marca">Marca</label>
+            <input id="marca" name="marca" type="text" required value="<%= carro.marca %>" />
+
+            <label for="modelo">Modelo</label>
+            <input id="modelo" name="modelo" type="text" required value="<%= carro.modelo %>" />
+
+            <label for="ano">Ano</label>
+            <input id="ano" name="ano" type="number" min="1900" max="2100" required value="<%= carro.ano %>" />
+
+            <label for="qtde_disponivel">Qtde_disponivel</label>
+            <input id="qtde_disponivel" name="qtde_disponivel" type="number" min="0" required value="<%= carro.qtde_disponivel %>" />
+
+            <button type="submit">Atualizar</button>
+          </form>
+        <% } %>
+        <p><a href="/carros/gerencia">Voltar à gerência</a></p>
+      </main>
+    </div>
+  </body>
+</html>
