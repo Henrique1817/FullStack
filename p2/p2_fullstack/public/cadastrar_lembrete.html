@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastrar post — Blog</title>
+    <link rel="stylesheet" href="/blog-lab.css" />
+  </head>
+  <body class="blog-page">
+    <div class="blog-wrap">
+      <header class="blog-header">
+        <h1>Novo post</h1>
+        <p class="blog-lead">Preencha todos os campos.</p>
+      </header>
+
+      <main class="blog-main">
+
+        <h1>O que você gostaria de lembrar?</h1>
+        <form class="form-post" action="/lembrete/post" method="post">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" type="text" required maxlength="200" />
+
+          <label for="resumo">Descrição</label>
+          <input id="resumo" name="resumo" type="text" required maxlength="500" />
+          
+          <label for="conteudo">Local</label>
+          <input id="conteudo" name="conteudo" type="text" required maxlength="200" />
+          
+          <label for="data">Data</label>
+          <input id="data" name="data" type="date" required />
+          
+          <label for="hora"></label>
+          <input id="hora" name="hora" type="time" required />
+          
+
+          <button type="submit">Salvar</button>
+
+        </form>
+        
+        <button type="button" onclick="window.location.href='/views/lembrete.ejs'">Listar</button>
+      </main>
+    </div>
+  </body>
+</html>

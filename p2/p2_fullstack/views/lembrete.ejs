@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog — LAB 9</title>
+    <link rel="stylesheet" href="/blog-lab.css" />
+  </head>
+  <body class="blog-page">
+    <div class="blog-wrap">
+      <header class="blog-header">
+        <h1>Blog</h1>
+        <p class="blog-lead">Lembretes armazenados no SQLite (create + read).</p>
+        <a class="btn-novo" href="cadastrar_lembrete.html">Criar novo post</a>
+      </header>
+
+      <main class="blog-main">
+        <% if (!posts || posts.length === 0) { %>
+          <p class="sem-posts">Nenhum lembrete ainda. Clique em “Criar novo lembrete".</p>
+        <% } else { %>
+          <ul class="lista-posts">
+            <% posts.forEach(function (p) { %>
+              <li class="cartao-post">
+                <h2><%= p.titulo %></h2>
+                <p class="meta">#<%= p.id %> · <%= p.criado_em %></p>
+                <p class="resumo"><%= p.resumo %></p>
+                <div class="conteudo"><%= p.conteudo %></div>
+                <p class="local"><%= p.local %></p>
+                <p class="data"><%= p.data %></p>
+                <p class="hora"><%= p.hora %></p>
+              </li>
+            <% }); %>
+          </ul>
+        <% } %>
+      </main>
+
+    </div>
+  </body>
+</html>
